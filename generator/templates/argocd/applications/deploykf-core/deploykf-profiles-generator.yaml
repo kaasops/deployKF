@@ -45,6 +45,10 @@ spec:
         duration: 5s
         factor: 2
         maxDuration: 3m
+    automated:
+      prune: false
+      selfHeal: true
+      allowEmpty: true
   ignoreDifferences:
     ## `rules` are aggregated when `aggregationRule.clusterRoleSelectors` is set
     - group: rbac.authorization.k8s.io
