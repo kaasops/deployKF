@@ -23,4 +23,9 @@ spec:
     ## NOTE: even if the internal apps target a remote cluster, the apps themselves should be in the Argo CD cluster
     server: "https://kubernetes.default.svc"
     namespace: {{< .Values.argocd.namespace | quote >}}
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+      allowEmpty: true
 {{<- end >}}

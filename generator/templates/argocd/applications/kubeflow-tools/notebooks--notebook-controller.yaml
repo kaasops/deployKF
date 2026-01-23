@@ -31,6 +31,11 @@ spec:
     server: {{< .Values.argocd.destination.server | quote >}}
     {{<- end >}}
     namespace: kubeflow
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+      allowEmpty: true
   ignoreDifferences:
     ## `rules` are aggregated when `aggregationRule.clusterRoleSelectors` is set
     - group: rbac.authorization.k8s.io
