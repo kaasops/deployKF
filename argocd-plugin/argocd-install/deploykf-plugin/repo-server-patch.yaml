@@ -37,7 +37,7 @@ spec:
               mountPath: /tools
 
         - name: deploykf-plugin-setup--deploykf
-          image: ghcr.io/deploykf/cli:0.1.2
+          image: docker.io/kaasops/deploykf-cli:0.1.3
           command:
             - "/bin/sh"
             - "-c"
