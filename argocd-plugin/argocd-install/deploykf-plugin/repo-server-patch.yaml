@@ -11,7 +11,7 @@ spec:
         fsGroup: 999
       initContainers:
         - name: deploykf-plugin-setup--kubectl
-          image: docker.io/bitnami/kubectl:1.26.10
+          image: docker.io/bitnamilegacy/kubectl:1.26.10
           command:
             - "/bin/sh"
             - "-c"
