@@ -5,7 +5,7 @@ set -euo pipefail
 THIS_SCRIPT_PATH=$(cd "$(dirname "$0")" && pwd)
 cd "$THIS_SCRIPT_PATH"
 
-ARGOCD_NAMESPACE="argocd"
+ARGOCD_NAMESPACE="argocd-infra"
 
 # create or update ConfigMap/argocd-deploykf-plugin
 kubectl create configmap argocd-deploykf-plugin \
@@ -21,6 +21,6 @@ kubectl apply \
   --filename=./argocd-install/deploykf-plugin/assets-pvc.yaml
 
 # patch Deployment/argocd-repo-server
-kubectl patch deployment argocd-repo-server \
+kubectl patch deployment argo-cd-argocd-repo-server \
   --namespace="$ARGOCD_NAMESPACE" \
   --patch-file=./argocd-install/deploykf-plugin/repo-server-patch.yaml
